@@ -15,7 +15,7 @@ NOTE: this is a Lasso 9 port of Lieven Gekiere's SHp_prowl tag for Lasso 8.5 (ht
 
 Sample Usage
 ------------
-```
+```lasso
 local(p = prowl)
 #p->apikey = 'XXX'
 #p->application = 'Lasso 9'
