@@ -5,7 +5,7 @@ define prowl => type {
  
  
 	private apicheck() => {
-		return .apikey != ''
+		return .apikey->size
 	}
 	  
 	public retrieve(path::string,post::string='') => { 
@@ -20,9 +20,10 @@ define prowl => type {
 				'application='+encode_url(.application), 
 				'event='+encode_url(#post) 
 			))
+			// note for future improvement: change to curl native to increase performance
 			local(response = include_url('https://prowl.weks.net' + #path + '?' + #getparams->join('&')))
 		}
-		return #response 
+		return #response->asString
 	}
 	  
 	public update(event::string) => {
