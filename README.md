@@ -9,16 +9,15 @@ Description
 
 Wrapper for the Prowl iPhone notification API. Allows you to send messages from Lasso to your iPhone via Push notifications. Requires the iPhone Prowl app to receive the notifications. (see http://bit.ly/17moncj ) 
 
-More info on Prowl: http://prowl.weks.net
+More info on Prowl: http://www.prowlapp.com/api.php
 
 NOTE: this is a Lasso 9 port of Lieven Gekiere's SHp_prowl tag for Lasso 8.5 (http://tagswap.net/SHp_prowl)
 
 Sample Usage
 ------------
 ```lasso
-local(p = prowl)
-#p->apikey = 'XXX'
-#p->application = 'Lasso 9'
- 
-#p->update('Hello, this is a test.')
+
+local(test = prowl)
+#test->apikey = 'XXX'
+#test->update(-event='testing 1',-description='this is using the new api',-application='Lasso 9')
 ```
